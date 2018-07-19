@@ -16,7 +16,7 @@ import java.util.Set;
  * <p>
  * 给定 "pwwkew" ，最长子串是 "wke" ，长度是3。请注意答案必须是一个子串，"pwke" 是 子序列  而不是子串。
  */
-public class Solution {
+public class Problem3 {
 
     @Deprecated
     public int lengthOfLongestSubstringEnumeration(String s) {

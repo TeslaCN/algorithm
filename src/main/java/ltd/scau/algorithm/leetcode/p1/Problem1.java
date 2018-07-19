@@ -18,7 +18,7 @@ import java.util.Map;
  * 因为 nums[0] + nums[1] = 2 + 7 = 9
  * 所以返回 [0, 1]
  */
-public class Solution {
+public class Problem1 {
 
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
@@ -33,7 +33,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution s = new Solution();
+        Problem1 s = new Problem1();
         s.test(new int[]{2, 7, 11, 15}, 9);
     }
 

@@ -23,7 +23,7 @@ class ListNode {
     }
 }
 
-public class Solution {
+public class Problem2 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
@@ -59,6 +59,6 @@ public class Solution {
 
 
     public static void main(String[] args) {
-        Solution s = new Solution();
+        Problem2 s = new Problem2();
     }
 }

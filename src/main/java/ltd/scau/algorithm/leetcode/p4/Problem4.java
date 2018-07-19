@@ -20,7 +20,7 @@ package ltd.scau.algorithm.leetcode.p4;
  * <p>
  * 中位数是 (2 + 3)/2 = 2.5
  */
-public class Solution {
+public class Problem4 {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
@@ -84,7 +84,7 @@ public class Solution {
 //        b = new int[]{2, 3, 11, 17, 21};
         a = new int[]{3};
         b = new int[]{1, 2, 4};
-        Solution s = new Solution();
+        Problem4 s = new Problem4();
         System.out.println(s.findMedianSortedArrays(a, b));
 //        a = new int[]{1, 3, 4, 6, 8, 9};
 //        b = new int[]{2, 3, 11, 14, 17, 21};

@@ -1,10 +1,8 @@
 package ltd.scau.algorithm.leetcode.p4;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Arrays;
@@ -14,9 +12,9 @@ import java.util.stream.Stream;
 /**
  * @author Weijie Wu
  */
-public class SolutionTest {
+public class Test4 {
 
-    private Solution s = new Solution();
+    private Problem4 s = new Problem4();
 
     @ParameterizedTest
     @MethodSource("getTestCase")

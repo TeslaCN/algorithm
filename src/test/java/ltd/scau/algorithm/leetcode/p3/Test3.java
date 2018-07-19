@@ -1,15 +1,7 @@
 package ltd.scau.algorithm.leetcode.p3;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * @author Weijie Wu
  */
-public class SolutionTest {
+public class Test3 {
 
-    private Solution s = new Solution();
+    private Problem3 s = new Problem3();
 
     @ParameterizedTest
     @CsvSource({
