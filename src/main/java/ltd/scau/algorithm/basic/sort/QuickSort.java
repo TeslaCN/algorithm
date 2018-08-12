@@ -1,8 +1,6 @@
 package ltd.scau.algorithm.basic.sort;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Weijie Wu
@@ -11,7 +9,8 @@ public class QuickSort implements Sort {
 
     @Override
     public <T> void sort(List<T> c, Comparator<? super T> comparator) {
-        quickSort(c, 0, c.size(), comparator);
+//        quickSort(c, 0, c.size(), comparator);
+        quickSortNoRecursive(c, 0, c.size(), comparator);
     }
 
     private <T> void quickSort(List<T> c, int left, int right, Comparator<? super T> comparator) {
@@ -19,6 +18,13 @@ public class QuickSort implements Sort {
             return;
         }
 
+        int i = partition(c, left, right, comparator);
+
+        quickSort(c, left, i, comparator);
+        quickSort(c, i + 1, right, comparator);
+    }
+
+    private <T> int partition(List<T> c, int left, int right, Comparator<? super T> comparator) {
         T base = c.get(left);
 
         int i = left, j = right - 1;
@@ -39,9 +45,44 @@ public class QuickSort implements Sort {
         }
         c.set(left, c.get(i));
         c.set(i, base);
+        return i;
+    }
 
-        quickSort(c, left, i, comparator);
-        quickSort(c, i + 1, right, comparator);
+    private <T> void quickSortNoRecursive(List<T> c, int left, int right, Comparator<? super T> comparator) {
+        if (left >= right) {
+            return;
+        }
+        Stack<Position> stack = new Stack<>();
+        stack.push(new Position(left, right));
+        while (!stack.empty()) {
+            Position p = stack.pop();
+            int i = p.left, j = p.right;
+
+            if (i < j) {
+
+                int k = partition(c, i, j, comparator);
+
+//                if (k > i) {
+                    stack.push(new Position(i, k));
+//                }
+//                if (j > k) {
+                    stack.push(new Position(k + 1, j));
+//                }
+            }
+        }
+    }
+
+    private static final class Position {
+
+        private final int left;
+
+        private final int right;
+
+        public Position(int left, int right) {
+            this.left = left;
+            this.right = right;
+        }
+
     }
 
 }

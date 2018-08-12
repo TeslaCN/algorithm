@@ -13,9 +13,9 @@ public class Main {
 
     public static void main(String[] args) {
 //        Integer[] a = Utils.randomList(8).toArray(new Integer[0]);
-        List<Integer> l = Utils.randomList(8);
+        List<Integer> l = Utils.randomList(11);
         System.out.println(l);
-        new QuickSort().sort(l);
+        new MergeSort().sort(l);
         System.out.println(l);
     }
 }
