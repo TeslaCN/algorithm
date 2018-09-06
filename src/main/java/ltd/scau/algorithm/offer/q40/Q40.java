@@ -1,6 +1,7 @@
 package ltd.scau.algorithm.offer.q40;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @author Weijie Wu
@@ -8,16 +9,28 @@ import java.util.ArrayList;
  */
 public class Q40 {
 
-    private ArrayList<Integer> result = new ArrayList<>();
 
     public ArrayList<Integer> getLeastNumbers(int[] input, int k) {
         if (input == null || input.length < 0 || k < 1) {
             return result;
         }
+        if (k > input.length) {
+            return result;
+        }
+        if (k == input.length) {
+            for (int i : input) {
+                result.add(i);
+            }
+            result.sort(null);
+            return result;
+        }
         get(input, 0, input.length, k);
 
+        result.sort(null);
         return result;
     }
+
+    private ArrayList<Integer> result = new ArrayList<>();
 
     private void get(int[] a, int left, int right, int k) {
         if (k < 1) {
@@ -25,11 +38,11 @@ public class Q40 {
         }
         int index = partition(a, left, right);
 
-        if (index - left <= k) {
-            for (int i = left; i < index; i++) {
+        if (index - left <= k - 1) {
+            for (int i = left; i <= index; i++) {
                 result.add(a[i]);
             }
-            get(a, index, right, k - (index - left));
+            get(a, index + 1, right, k - 1 - (index - left));
         } else {
             get(a, left, index, k);
         }
@@ -71,6 +84,6 @@ public class Q40 {
 
     public static void main(String[] args) {
         Q40 q = new Q40();
-        System.out.println(q.getLeastNumbers(new int[]{4, 5, 1, 6, 2, 7, 3, 8}, 4));
+        System.out.println(q.getLeastNumbers(new int[]{4, 5, 1, 6, 2, 7, 3, 8}, 10));
     }
 }
